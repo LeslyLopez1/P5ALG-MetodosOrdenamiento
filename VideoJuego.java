@@ -76,7 +76,12 @@ public class VideoJuego {
         return wishlist;
     }
     
-
+    public static long convertirANumero(String value) {
+        if (value == null || value.isBlank()) return 0;
+        value = value.replace(",", "").replace("K", "000").replace("k", "000");
+        return (long) Double.parseDouble(value);
+    }
+    
     @Override
     public String toString() {
         return title;
